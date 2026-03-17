@@ -14,86 +14,123 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: radial-gradient(circle at top, #1e3c72, #0f2027);
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+    overflow-x: hidden;
 }
 
-/* MAIN CARD */
+/* FADE IN */
+body {
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* MAIN */
 .container {
-    max-width: 500px;
-    width: 90%;
+    text-align: center;
+    margin-top: 80px;
 }
 
 /* TITLE */
 h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 55px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 /* SUBTEXT */
 p {
     opacity: 0.8;
-    margin-bottom: 20px;
 }
 
 /* DOWNLOAD BUTTON */
 .download-btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
+    margin-top: 30px;
+    padding: 16px 35px;
     border-radius: 12px;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     color: white;
     text-decoration: none;
-    font-weight: bold;
     font-size: 18px;
     transition: 0.3s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
 }
 
-/* INFO */
-.info {
-    margin-top: 25px;
-    opacity: 0.7;
-    font-size: 14px;
+/* STATS */
+.stats {
+    margin-top: 50px;
+}
+
+.stat {
+    display: inline-block;
+    margin: 15px;
+    font-size: 20px;
+}
+
+/* LOGIN PANEL */
+.login {
+    margin: 60px auto;
+    width: 300px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #00c6ff;
+    color: white;
+    cursor: pointer;
 }
 
 /* SOCIAL */
 .socials {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .socials a {
-    display: inline-block;
     margin: 5px;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none;
     color: white;
-    font-size: 14px;
-    transition: 0.3s;
+    display: inline-block;
 }
 
-.discord {
-    background: #5865F2;
-}
-
-.github {
-    background: #24292e;
-}
+.discord { background: #5865F2; }
+.github { background: #24292e; }
 
 .socials a:hover {
     transform: scale(1.1);
+}
+
+/* INFO */
+.info {
+    margin-top: 30px;
+    opacity: 0.6;
 }
 </style>
 </head>
@@ -108,16 +145,38 @@ p {
         Download Now
     </a>
 
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat">⚡ +200 FPS</div>
+        <div class="stat">🛡️ AntiCheat Bypass</div>
+        <div class="stat">🔄 Version Switch</div>
+    </div>
+
+    <!-- LOGIN FAKE -->
+    <div class="login">
+        <h3>Launcher Login</h3>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="fakeLogin()">Login</button>
+    </div>
+
     <div class="info">
         <p>Version 1.0</p>
         <p>Compatible with modern versions</p>
     </div>
 
+    <!-- SOCIAL -->
     <div class="socials">
         <a href="https://discord.gg/TUO_LINK" target="_blank" class="discord">Discord</a>
         <a href="https://github.com/TUO_PROFILO" target="_blank" class="github">GitHub</a>
     </div>
 </div>
+
+<script>
+function fakeLogin() {
+    alert("Login system coming soon 👀");
+}
+</script>
 
 </body>
 </html>
